@@ -2,7 +2,8 @@ package com.fs.dreams;
 
 import com.alibaba.fastjson.JSON;
 import com.fs.dreams.utils.FStringUtil;
-import com.fs.dreams.utils.GeneralUtils;
+import com.fs.dreams.utils.GeneralUtil;
+import com.fs.dreams.utils.GeneralUtil;
 import com.fs.dreams.utils.OkHttpUtil;
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.Request;
@@ -39,7 +40,7 @@ public class CaptureUtils {
     public static List<Artist> searchArtist(String artistName, int pageNum, int pageSize) {
         List<Artist> resultList = new LinkedList<Artist>();
         try {
-            String response = OkHttpUtil.post(NtesApi.SEARCH_URL, GeneralUtils.generateMap(
+            String response = OkHttpUtil.post(NtesApi.SEARCH_URL, GeneralUtil.generateMap(
                     "s", artistName, "offset", getOffset(pageNum, pageSize), "limit", pageSize, "type", NtesApi.SEARCH_TYPE_ARTIST));
             if (FStringUtil.isNoneBlank(response)) {
                 System.out.println(JSON.toJSONString(JSON.parseObject(response), true));
