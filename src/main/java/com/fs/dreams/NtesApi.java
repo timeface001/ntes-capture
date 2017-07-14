@@ -66,7 +66,7 @@ public interface NtesApi {
      * 歌曲信息
      * id：歌曲ID  ids：不知道干什么用的，用[]括起来的歌曲ID
      */
-    String SONG_DETAIL = "http://music.163.com/api/song/detail/?id=[id]&ids=[id]";
+    String SONG_DETAIL = "http://music.163.com/api/song/detail/?id=[id]&ids=[[id]]";
 
     /**
      * GET
@@ -105,5 +105,10 @@ public interface NtesApi {
     /**
      * 歌手下面歌曲
      */
-    String ARTIST_SONG="http://music.163.com/api/cloudsearch/get/web?type=[type]&s=[s]&limit=[limit]&offset=[offset]";
+    String ARTIST_SONG = "http://music.163.com/api/cloudsearch/get/web";
+
+    /**
+     * 歌手热榜单
+     */
+    String ARTIST_TOP = "http://music.163.com/api/artist/top?limit=[limit]&offset=[offset]";
 }
