@@ -135,7 +135,7 @@ public class CaptureUtils {
     }
 
     public static List<Song> searchSongs(String artistName, int pageNum, int pageSize) {
-        List<Song> songs = new ArrayList<>();
+        List<Song> songs = new ArrayList<Song>();
         try {
             String response = OkHttpUtil.post(NtesApi.ARTIST_SONG, GeneralUtil.generateMap("s", artistName, "offset", getOffset(pageNum, pageSize), "limit", pageSize, "type", NtesApi.SEARCH_TYPE_SONG));
             System.out.println(response);
@@ -147,7 +147,7 @@ public class CaptureUtils {
     }
 
     public static List<Song> searchSongsByAlbumName(String albumName, Long albumId, int pageNum, int pageSize) {
-        List<Song> songs = new ArrayList<>();
+        List<Song> songs = new ArrayList<Song>();
         try {
             String response = OkHttpUtil.post(NtesApi.ARTIST_SONG, GeneralUtil.generateMap("s", albumName, "offset", getOffset(pageNum, pageSize), "limit", pageSize, "type", NtesApi.SEARCH_TYPE_SONG));
             if (StringUtils.isNotBlank(response)) {
